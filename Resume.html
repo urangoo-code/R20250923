@@ -1,109 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Resume — Urangoo Chinbayar</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
+    :root {
+      --main-bg: #ffffff;
+      --sidebar-bg: #f5f7fa;
+      --accent: #1e88e5;
+      --text-main: #333;
+      --text-light: #555;
+    }
+
     body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Poppins', sans-serif;
+      background-color: #edf0f3;
       margin: 0;
-      padding: 0;
-      background-color: #f4f4f9;
-      color: #333;
+      padding: 40px;
+      color: var(--text-main);
     }
+
     .container {
-      max-width: 900px;
-      margin: 30px auto;
-      background: #fff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    header {
+      max-width: 1000px;
+      background: var(--main-bg);
+      margin: auto;
       display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      margin-bottom: 30px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     }
-    header h1 {
-      margin: 0;
-      font-size: 2em;
+
+    /* LEFT SIDEBAR */
+    .sidebar {
+      width: 32%;
+      background-color: var(--sidebar-bg);
+      padding: 30px 25px;
+      box-sizing: border-box;
+      border-right: 1px solid #ddd;
     }
-    header p {
-      margin: 5px 0 0 0;
-      font-size: 1em;
-      color: #555;
+
+    .photo {
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid var(--accent);
+      margin: 0 auto 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
     }
-    section {
-      margin-bottom: 20px;
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
-    section h2 {
-      border-bottom: 2px solid #4CAF50;
-      padding-bottom: 5px;
+
+    .sidebar h3 {
+      color: var(--accent);
+      font-size: 1.1em;
+      margin-top: 25px;
       margin-bottom: 10px;
-      color: #4CAF50;
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+      padding-bottom: 3px;
     }
-    ul {
+
+    .sidebar ul {
       list-style: none;
       padding: 0;
+      margin: 0;
     }
-    ul li {
+
+    .sidebar li {
       margin-bottom: 8px;
+      font-size: 0.95em;
+      color: var(--text-light);
+    }
+
+    .sidebar i {
+      color: var(--accent);
+      margin-right: 8px;
+    }
+
+    /* RIGHT CONTENT */
+    .content {
+      width: 68%;
+      padding: 40px 50px;
+      position: relative;
+      box-sizing: border-box;
+    }
+
+    .header {
+      margin-bottom: 25px;
+      border-bottom: 3px solid var(--accent);
+      padding-bottom: 10px;
+    }
+
+    .header h1 {
+      font-size: 2.2em;
+      margin: 0;
+      color: var(--text-main);
+    }
+
+    .header p {
+      margin: 4px 0;
+      color: var(--text-light);
+      font-weight: 400;
+    }
+
+    .student-id {
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      font-size: 0.9em;
+      color: #777;
+    }
+
+    h2 {
+      color: var(--accent);
+      font-size: 1.3em;
+      margin-bottom: 8px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 4px;
+      text-transform: uppercase;
+    }
+
+    .content p, .content ul {
+      font-size: 0.98em;
+      color: var(--text-light);
+    }
+
+    .experience-item {
+      margin-bottom: 15px;
+    }
+
+    .experience-item h4 {
+      margin: 0;
+      font-weight: 600;
+    }
+
+    .experience-item span {
+      font-size: 0.9em;
+      color: #777;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      body { padding: 20px; }
+      .container { flex-direction: column; }
+      .sidebar, .content { width: 100%; }
+      .student-id { position: static; text-align: right; margin-top: -10px; }
     }
   </style>
 </head>
 <body>
   <div class="container">
-    <header>
-      <h1>Urangoo Chinbayar</h1>
-      <p>Email: urangoo@example.com | Phone: +976 9911 2233 | Location: Ulaanbaatar, Mongolia</p>
-    </header>
-
-    <section>
-      <h2>Profile</h2>
-      <p>Highly motivated software developer with strong experience in C#, web development, and data analysis. Passionate about creating user-friendly applications and solving complex problems with innovative solutions.</p>
-    </section>
-
-    <section>
-      <h2>Education</h2>
+    <aside class="sidebar">
+      <div class="photo">
+        <img src="gemini.png" alt="Urangoo Chinbayar Photo">
+      </div>
+      
+      <h3>Contact</h3>
       <ul>
-        <li><strong>Mongolian University of Science and Technology</strong> — BSc in Computer Science, 2025</li>
-        <li><strong>Ulaanbaatar High School</strong> — High School Diploma (A+), 2021</li>
+        <li><i class="fas fa-envelope"></i> chinbayarurangoo@gmail.com</li>
       </ul>
-    </section>
 
-    <section>
-      <h2>Experience</h2>
+      <h3>Education</h3>
       <ul>
-        <li><strong>Software Developer Intern</strong> — Tech Solutions LLC, 2024–2025<br>Developed Windows Forms and web applications, implemented features based on client requirements, and assisted in database design.</li>
-        <li><strong>IT Assistant</strong> — ABC Corporation, 2023–2024<br>Managed office networks, supported staff with software troubleshooting, and improved internal documentation processes.</li>
+        <li><strong>Asia University</strong><br>BSc Computer Science (Current)</li>
+        <li><strong>UFE Mongolia</strong><br>First two years completed</li>
+        <li><strong>High School</strong><br>Graduated 2023<br>TOEFL ITP 513</li>
       </ul>
-    </section>
 
-    <section>
-      <h2>Skills</h2>
+      <h3>Skills</h3>
       <ul>
-        <li>C#, .NET, Windows Forms, ASP.NET</li>
-        <li>HTML, CSS, JavaScript</li>
-        <li>SQL, EViews, Data Analysis</li>
-        <li>Problem Solving, Teamwork, Time Management</li>
+        <li>MSSQL</li>
+        <li>Python</li>
+        <li>SQL</li>
+        <li>Microsoft Word</li>
+        <li>Teamwork & Communication</li>
+        <li>Problem Solving</li>
       </ul>
-    </section>
 
-    <section>
-      <h2>Languages</h2>
+      <h3>Languages</h3>
       <ul>
         <li>Mongolian — Native</li>
-        <li>English — Advanced</li>
+        <li>English — Advanced (TOEFL 513)</li>
       </ul>
-    </section>
+    </aside>
 
-    <section>
-      <h2>References</h2>
-      <p>Available upon request</p>
-    </section>
+    <main class="content">
+      <div class="student-id">Student ID: 114021163</div>
+
+      <div class="header">
+        <h1>Urangoo Chinbayar</h1>
+        <p>Computer Science Student</p>
+      </div>
+
+      <section>
+        <h2>Professional Summary</h2>
+        <p>Detail-oriented Computer Science student with practical experience in programming and data management. Strong foundation in Python and MSSQL, with a passion for developing efficient software solutions. Motivated, adaptable, and eager to contribute to real-world technology projects.</p>
+      </section>
+
+      <section>
+        <h2>Experience</h2>
+        <div class="experience-item">
+          <h4>Intern — Smart Logic Company</h4>
+          <span>1 Month (2024)</span>
+          <ul>
+            <li>Assisted in software and database management tasks.</li>
+            <li>Gained practical insights into teamwork and system design.</li>
+            <li>Applied academic knowledge in a real-world business setting.</li>
+          </ul>
+          <h4>Volunteer — Handicraft Exhibition</h4>
+<span>Dec 2024</span>
+<ul><li>Organized exhibitions and coordinated events featuring fashion shows and workshops.</li>
+<li>Assisted artists, managed logistics, and promoted handicrafts by underprivileged groups.</li></ul>
+
+        </div>
+      </section>
+<section>
+  <h2>Hobbies</h2>
+  <p>Artwork • Bicycling • Dance • Singing • Skiing</p>
+      <section>
+        <h2>References</h2>
+        <p>Available upon request</p>
+      </section>
+    </main>
   </div>
 </body>
 </html>
